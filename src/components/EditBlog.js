@@ -1,7 +1,6 @@
 import { Edit } from '@mui/icons-material';
 
 import React, { useState } from 'react';
-import { useBlogsContext } from '../hooks/useBlogsContext';
 import { useNavigate } from "react-router-dom"
 
 import Editor from 'ckeditor5-custom-build/build/ckeditor'
@@ -13,7 +12,6 @@ import { DownOutlined } from '@ant-design/icons';
 
 const EditBlog = (editBlog) => {
 
-  const {dispatch} = useBlogsContext()
   const [title, setTitle] = useState(editBlog.editBlog.title);
   const [description, setDescription] = useState(editBlog.editBlog.description);
   const [image, setImage] = useState(editBlog.editBlog.image);
