@@ -8,7 +8,7 @@ import Swal from 'sweetalert2'
 
 const SideBar =() => {
   const navigate = useNavigate()
-  const [selected,setSelected] = useState('/home')
+  const [selected,setSelected] = useState('')
     return (
       <div>
         <Menu className='sidebar'
