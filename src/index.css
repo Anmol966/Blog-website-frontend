@@ -47,7 +47,7 @@ body{
 }
 .blog-details img{
   height: 200px;
-  width: 300px;
+  object-fit: cover;
 }
 
 .blog-details h4{
@@ -169,7 +169,9 @@ input.error{
 }
 
 .about-us{
-  font-size: 40px;
+  font-size: 16px;
+  font-family:"Poppins";
+  font-weight: 410;
 }
 
 

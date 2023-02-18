@@ -4,6 +4,7 @@ import { AccountCircle, EditOutlined, Group, Home, Logout } from '@mui/icons-mat
 
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+import Swal from 'sweetalert2'
 
 const SideBar =() => {
   const navigate = useNavigate()
@@ -15,8 +16,23 @@ const SideBar =() => {
           onClick={
             ({key})=>{
               if(key==='signout'){
-                localStorage.removeItem('user')
-                window.location.reload()
+                Swal.fire({
+                  title: "Are You Sure ?",
+                  text: "Please confirm if you want to SignOut",
+                  showConfirmButton: true,
+                  showCancelButton: true,
+                  confirmButtonText: "SignOut",
+                  confirmButtonColor: "#F27474",
+                  cancelButtonText: "Cancel",
+                  icon: "question",
+                }).then((result)=>{
+                  if(result.isConfirmed){
+                    localStorage.removeItem('user')
+                    window.location.reload()
+                  }
+                  
+                })
+                
               }
               else{
                 setSelected(key)
